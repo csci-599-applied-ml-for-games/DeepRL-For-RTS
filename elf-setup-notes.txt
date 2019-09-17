@@ -1,0 +1,24 @@
+Facebook ELF Notes:
+
+    > Github: https://github.com/facebookresearch/ELF
+    > Tutorial: http://yuandong-tian.com/elf-tutorial/tutorial.html
+
+Versions required:
+    > Python <= 3.6 (They have used async as variable name, from python 3.7 async is a reserved word/feature in python)
+    > PyTorch <= 0.2.0 (If you face dimension mismatch issue, or cuda variable name issue, downgrade PyTorch to 0.2.0)
+    > Cmake >= 3.8
+        Mac Mojave has the issue of brew libraries not getting attached to gcc. If you face issue of not detecting the library during make command, change the header name in collector.hh and primitive.hh files.
+        #include <tbb/concurrent_queue.h>
+        To absolute path i.e: /usr/local/alagappan/…/tbb/concurrent_queue.h
+
+    > Gcc >= 4.9
+    Upgrade gcc using brew. It will install gcc8. To make it the default gcc, create a simlink
+    i.e “ln -s gcc-8 gcc”
+    > Tbb 
+
+To resolve the version issue, I will create a run time inside our repo. Till then if any issues in local ping me. 
+
+Colab:
+
+•	To use it as SSH machine: https://imadelhanafi.com/posts/google_colal_server/
+•	The colab jupyter file is inside the colab-resources folder
