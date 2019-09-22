@@ -1,4 +1,12 @@
-# ELF: An Extensive, Lightweight and Flexible Platform for Game Research
+# Deep RL for RTS
+
+Team Members:
+1. Dhruv Mathew
+2. Dhineshkumar R
+3. Alagappan Maruthappan
+4. Sushant
+5. Samiksha
+
 
 Overview
 ===============
