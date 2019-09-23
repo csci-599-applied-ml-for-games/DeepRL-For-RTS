@@ -9,7 +9,15 @@ Versions required:
     > Cmake >= 3.8
         Mac Mojave has the issue of brew libraries not getting attached to gcc. If you face issue of not detecting the library during make command, change the header name in collector.hh and primitive.hh files.
         #include <tbb/concurrent_queue.h>
-        To absolute path i.e: /usr/local/alagappan/…/tbb/concurrent_queue.h
+        To absolute path i.e: /usr/local/include/tbb/concurrent_queue.h
+
+        Add this to CMakeLists.txt file:
+        IF(APPLE)
+            # Fix linking on 10.14+. See https://stackoverflow.com/questions/54068035
+            LINK_DIRECTORIES(/usr/local/Cellar/)
+	        LINK_DIRECTORIES(/usr/local/lib)
+	        LINK_DIRECTORIES(/usr/local/include)
+        ENDIF()
 
     > Gcc >= 4.9
     Upgrade gcc using brew. It will install gcc8. To make it the default gcc, create a simlink
